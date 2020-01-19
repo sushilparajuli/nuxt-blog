@@ -27,7 +27,7 @@ export const actions = {
     if (!authData.isLogin) {
       authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.fbKey}`
     }
-    this.$axios.post(authUrl, {
+    return this.$axios.post(authUrl, {
       email: authData.email,
       password: authData.password,
       returnSecureToken: true
