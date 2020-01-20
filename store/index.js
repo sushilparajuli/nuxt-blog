@@ -25,7 +25,7 @@ export const getters = {
 
 export const actions = {
   nuxtServerInit (vuexContext, context) {
-    return this.$axios.get(`${process.env.baseUrl}/posts.json`)
+    return this.$axios.get(`${process.env.BASE_URL}/posts.json`)
       .then((res) => {
         const posts = []
         for (const key in res.data) {
@@ -47,7 +47,7 @@ export const actions = {
       .then((result) => {
         vuexContext.commit('addPost', { ...createPost, id: result.data.name })
       })
-      .catch(error => console.log(error))
+      .catch(error => console.error(error))
   },
   editPost (vuexContext, postData) {
     const postInfo = {
@@ -60,6 +60,6 @@ export const actions = {
           vuexContext.commit('editPost', postInfo)
         }
       })
-      .catch(error => console.log(error))
+      .catch(error => console.error(error))
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <div>
-     <img
-        :src="post.thumbnail"
-        class="w-full"
-        alt="Woman paying for a purchase"
-      >
+    <img
+      :src="post.thumbnail"
+      class="w-full"
+      alt="Woman paying for a purchase"
+    >
     <div class="pt-4">
       <div class="uppercase tracking-wide text-lg text-indigo-600 font-bold">
         {{ post.author }}

@@ -41,6 +41,9 @@ export const actions = {
           'expirationDate',
           new Date().getTime() + Number.parseInt(data.expiresIn) * 1000
         )
+        this.$axios.post('http://localhost:3000/api/track-data', {
+          data: 'This is my data'
+        })
       })
       .catch(error => console.log(error))
   },

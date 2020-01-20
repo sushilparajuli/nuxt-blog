@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 export default {
   mode: 'universal',
   /*
@@ -66,8 +66,7 @@ export default {
     extend (config, ctx) {
     }
   },
-  env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-28024.firebaseio.com',
-    fbKey: 'AIzaSyBjNMd18brBsPo75Wxw3dpzcMMm-y1cBEM'
-  }
+  serverMiddleware: [
+    '~/api'
+  ]
 }
