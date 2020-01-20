@@ -25,7 +25,7 @@ export const getters = {
 
 export const actions = {
   nuxtServerInit (vuexContext, context) {
-    return this.$axios.get(`${process.env.baseUrl}/posts.json`)
+    return this.$axios.get(`${process.env.BASE_URL}/posts.json`)
       .then((res) => {
         const posts = []
         for (const key in res.data) {
@@ -43,7 +43,7 @@ export const actions = {
       ...postData,
       updatedDate: new Date()
     }
-    return this.$axios.post(`${process.env.baseUrl}/posts.json?auth=${vuexContext.getters['auth/getToken']}`, createPost)
+    return this.$axios.post(`${process.env.BASE_URL}/posts.json?auth=${vuexContext.getters['auth/getToken']}`, createPost)
       .then((result) => {
         vuexContext.commit('addPost', { ...createPost, id: result.data.name })
       })
@@ -54,7 +54,7 @@ export const actions = {
       ...postData,
       updatedDate: new Date()
     }
-    return this.$axios.put(`${process.env.baseUrl}/posts/${postData.id}.json?auth=${vuexContext.getters['auth/getToken']}`, postInfo)
+    return this.$axios.put(`${process.env.BASE_URL}/posts/${postData.id}.json?auth=${vuexContext.getters['auth/getToken']}`, postInfo)
       .then((result) => {
         if (result) {
           vuexContext.commit('editPost', postInfo)

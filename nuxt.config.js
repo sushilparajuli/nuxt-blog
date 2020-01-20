@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 export default {
   mode: 'universal',
   /*
@@ -38,7 +38,9 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // module that loads your .env file into your context options
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Nuxt.js modules
@@ -65,9 +67,5 @@ export default {
     */
     extend (config, ctx) {
     }
-  },
-  env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-28024.firebaseio.com',
-    fbKey: 'AIzaSyBjNMd18brBsPo75Wxw3dpzcMMm-y1cBEM'
   }
 }

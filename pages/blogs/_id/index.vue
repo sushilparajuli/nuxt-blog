@@ -23,7 +23,7 @@
 <script>
 export default {
   async asyncData (context) {
-    const { data } = await context.$axios.get(`${process.env.baseUrl}/posts/${context.params.id}.json`)
+    const { data } = await context.$axios.get(`${process.env.BASE_URL}/posts/${context.params.id}.json`)
     return { post: data }
   },
   head () {

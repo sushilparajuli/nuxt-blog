@@ -15,7 +15,7 @@ export default {
     AdminPostForm
   },
   async asyncData (context) {
-    const { data } = await context.$axios.get(`${process.env.baseUrl}/posts/${context.params.postId}.json`)
+    const { data } = await context.$axios.get(`${process.env.BASE_URL}/posts/${context.params.postId}.json`)
     return { loadedPost: data }
   },
   head () {
